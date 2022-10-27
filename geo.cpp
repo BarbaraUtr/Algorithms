@@ -1,36 +1,88 @@
-#include<cstdio>
+#include<bits/stdc++.h>
 
-#define LOL 2002
+#define LOL 100005
+#define s second
+#define f first
 
-long long x[LOL],y[LOL];
-int t[LOL];
+using namespace std;
 
-int n, x0, y0;
+typedef pair<int, int> pii;
 
-bool cmp(int i1,int i2)
+int n;
+int g, h;
+
+///*
+struct Odcx
 {
-	return (x[i1]-x0)(y[i2]-y0)-(x[i2]-y0)*(y[i1]-y0)<0;
-	
+	int p;
+	int k;
+	int y;  
+};
+
+bool operator< (Odcx a, Odcx b)
+{
+	if(a.y>b.y) return 0;
+	if(a.y==b.y) return a.p > b.p;
+	else return 1;
 }
 
-int main()
+Odcx odcx[LOL];
+
+struct Odcy;
 {
+	int p;
+	int k;
+	int x;
+};
+
+bool operator< (Odcy a, Odcy b)
+{
+	if(a.x>b.x) return 0;
+	if(a.y==b.y) return a.p > b.p;
+	else return 1;
+}
+
+Odcy odcy[LOL];
+//*/
+
+int main ()                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+{	
+//	/*
+
 	scanf("%d", &n);
 	
-	for(int i=0; i<n; i++)
+	for(int i=0; i<n; ++i)
 	{
-		int x, y;
-		scanf("%d%d", &x, &y);
-		t[i]=i;
-	}
-	
-	sort(t,t+n,cmp);
-	
-	for(int i=0; i<n; i++)
-	{
-		for(int k=0; k<n; k++)
+		int a, b, c, d; 
+		scanf("%d%d%d%d", &a, &b, &c, &d);
+		
+		if(a==c)
 		{
-			if(y[k]<y[i]) 
+			if(d>b) swap(b, d);
+			odcy[g].p=b;
+			odcy[g].k=d;
+			odcy[g].x=a;
+			g++;
+		}
+		if(b==d&&a!=c)
+		{
+			if(c>a) swap(a,c);
+			odcx[h].p=a;
+			odcx[h].k=c;
+			odcx[h].y=b;
+			h++;
 		}
 	}
+	
+	sort(odcx, odcx+(h+1));
+	sort(odcy, odcy+(g+1));
+	
+	for(int i=0; i<h; ++i)
+	{
+		while(odcx[i].k>odcx[i+1].p)
+		{
+					
+		}
+	}
+//	*/
 }
